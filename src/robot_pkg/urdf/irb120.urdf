@@ -9,7 +9,8 @@
     <material name="yellow">
         <color rgba="0 1 1 1"/>
     </material>
-
+         
+    <!-- Link list -->
     <link name="base_link">
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -152,11 +153,16 @@
         </collision>
         <inertial>
             <mass value="0.0136784407912"/>
+            <!--<inertia ixx="1.65768910842e-06" ixy="-3.0670406059e-12" ixz="8.9225606574e-11" iyy="1.69424824883e-06" iyz="-7.6624364717e-09" izz="2.9767913551e-06"/>-->
+            <!--<origin rpy="0 0 0" xyz="-4.42649390919e-07 0.000169444143624 -0.0070610831163"/>-->
             <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
             <origin rpy="0 0 0" xyz="-0.00706 -0.00017 -1.32e-06"/>
         </inertial>    
     </link>
+
+    <!-- End link list -->
          
+    <!-- Joint list -->
     <joint name="joint_1" type="revolute">
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <parent link="base_link"/>
@@ -216,7 +222,42 @@
         <parent link="world"/>
         <child link="base_link"/>
     </joint>
+
+    <!-- End joint list -->
     
+    <!-- Gazebo specific link properties -->
+    
+    <gazebo reference="base_link">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_1">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_2">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_3">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_4">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_5">
+        <material>Gazebo/Orange</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+    <gazebo reference="link_6">
+        <material>Gazebo/Black</material>
+        <turnGravityOff>True</turnGravityOff>
+    </gazebo>
+
+    <!-- End gazebo specific link properties -->
+
     <!--<gazebo>-->
         <!--<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">-->
             <!--<robotNamespace>/</robotNamespace>-->
