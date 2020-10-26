@@ -19,11 +19,11 @@
 -->
     <!-- Load joint state controller -->
     <rosparam file="$(find robot_pkg)/config/joint_state_controller.yaml" command="load" />
-    <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" />
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" />
 
     <!-- Load arm controller -->
     <rosparam file="$(find robot_pkg)/config/arm_controller.yaml" command="load" />
-    <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" />
+    <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller" />
 
 </launch>
 
