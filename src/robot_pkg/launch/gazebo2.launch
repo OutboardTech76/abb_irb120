@@ -22,6 +22,7 @@
     <rosparam file="$(find robot_pkg)/config/control.yaml" command="load" />
     <param name="/use_sim_time" value="true"/>
     <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller arm_controller" />
+    <!--<node name="arm_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint6_position_controller" />-->
 
 </launch>
 
