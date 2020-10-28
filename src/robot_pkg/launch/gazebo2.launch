@@ -1,5 +1,10 @@
 
 <launch>
+
+    <!-- Remap topics -->
+    <remap from ="/arm_controller/command" to="/path_command"/>
+    <remap from="/arm_controller/state" to="/controller_state"/>
+    <remap from="/arm_controller/follow_joint_trajectory" to="/trajectory_action" />
     
     <!-- Start simulated world as empty world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
