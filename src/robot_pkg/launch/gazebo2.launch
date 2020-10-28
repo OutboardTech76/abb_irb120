@@ -15,8 +15,6 @@
     <include file="$(find robot_pkg)/launch/load_irb120.launch"/>
 
     <!-- Spawn robot model -->
-    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_pkg)/urdf/irb120.urdf -urdf -x 0.1 -y 0.1 -z 0 -model irb120" /> -->
-
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -x 0.1 -y 0.1 -z 0 -model irb120" />
      
       
@@ -27,7 +25,6 @@
     <rosparam file="$(find robot_pkg)/config/control.yaml" command="load" />
     <param name="/use_sim_time" value="true"/>
     <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller arm_controller" />
-    <!--<node name="arm_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint6_position_controller" />-->
 
 </launch>
 
